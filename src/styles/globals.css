@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Erişilebilir focus */
+:focus-visible {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+/* Koyu temada kontrastı artırmak istersen: */
+// .btn { @apply border rounded-lg px-3 py-1 hover:bg-gray-50; }
+
+/* Kullanıcı “animasyonları azalt” seçtiyse: */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

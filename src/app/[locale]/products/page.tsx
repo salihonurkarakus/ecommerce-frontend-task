@@ -4,7 +4,14 @@ import ProductGrid from "@/components/product/ProductGrid";
 import ProductFilters from "@/components/product/ProductFilters";
 import { Product } from "@/lib/types";
 import { getMessages, Locale } from "@/lib/i18n";
+import type { Metadata } from "next";
 
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Products | E-Commerce",
+    description: "Browse products with filters and sorting.",
+  };
+}
 function applyFilters(
   all: Product[],
   opts: { category?: string; min?: number; max?: number; sort?: string }

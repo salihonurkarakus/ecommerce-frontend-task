@@ -9,9 +9,12 @@ export default function CartIcon({ locale }: { locale: string }) {
     <Link
       href={`/${locale}/cart`}
       className="relative inline-flex items-center gap-2 text-sm"
+      aria-label={locale === "tr" ? "Sepet" : "Cart"}
     >
-      <span>🛒</span>
-      <span className="min-w-5 text-center inline-block">{count}</span>
+      <span aria-hidden>🛒</span>
+      <span className="min-w-5 text-center inline-block" aria-live="polite">
+        {count}
+      </span>
     </Link>
   );
 }
