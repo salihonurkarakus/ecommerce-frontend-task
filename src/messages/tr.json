@@ -1,6 +1,17 @@
 {
   "home": {
     "title": "Ana sayfa",
-    "subtitle": "Altyapı hazır. Ürün listesini bağlamaya geçebiliriz."
+    "subtitle": "Altyapı hazır. Ürün listesini bağladık."
+  },
+  "products": { "title": "Ürünler", "empty": "Ürün bulunamadı." },
+  "filters": {
+    "category": "Kategori",
+    "min": "Min",
+    "max": "Maks",
+    "sort": "Sırala",
+    "all": "Tümü",
+    "none": "Yok",
+    "priceAsc": "Fiyat ↑",
+    "priceDesc": "Fiyat ↓"
   }
 }

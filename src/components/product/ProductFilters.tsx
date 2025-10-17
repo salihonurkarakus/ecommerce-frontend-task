@@ -1,17 +1,41 @@
 "use client";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
+function displayCategory(locale: string, cat: string) {
+  if (locale !== "tr") return cat;
+  const map: Record<string, string> = {
+    "men's clothing": "Erkek giyim",
+    "women's clothing": "Kadın giyim",
+    jewelery: "Mücevher",
+    electronics: "Elektronik",
+  };
+  return map[cat] ?? cat;
+}
+
 export default function ProductFilters({
   categories,
+  messages,
+  locale,
 }: {
   categories: string[];
+  messages: {
+    category: string;
+    min: string;
+    max: string;
+    sort: string;
+    all: string;
+    none: string;
+    priceAsc: string;
+    priceDesc: string;
+  };
+  locale: string;
 }) {
   const router = useRouter();
   const search = useSearchParams();
   const pathname = usePathname();
 
   const currentCategory = search.get("category") || "";
-  const sort = search.get("sort") || ""; // 'price-asc' | 'price-desc'
+  const sort = search.get("sort") || "";
   const min = search.get("min") || "";
   const max = search.get("max") || "";
 
@@ -27,23 +51,23 @@ export default function ProductFilters({
   return (
     <div className="flex flex-wrap gap-3 items-end">
       <label className="text-sm">
-        <div className="mb-1">Category</div>
+        <div className="mb-1">{messages.category}</div>
         <select
           className="border rounded-lg px-2 py-1"
           value={currentCategory}
           onChange={(e) => update({ category: e.target.value || undefined })}
         >
-          <option value="">All</option>
+          <option value="">{messages.all}</option>
           {categories.map((c) => (
             <option key={c} value={c}>
-              {c}
+              {displayCategory(locale, c)}
             </option>
           ))}
         </select>
       </label>
 
       <label className="text-sm">
-        <div className="mb-1">Min</div>
+        <div className="mb-1">{messages.min}</div>
         <input
           type="number"
           placeholder="0"
@@ -54,7 +78,7 @@ export default function ProductFilters({
       </label>
 
       <label className="text-sm">
-        <div className="mb-1">Max</div>
+        <div className="mb-1">{messages.max}</div>
         <input
           type="number"
           placeholder="1000"
@@ -65,15 +89,15 @@ export default function ProductFilters({
       </label>
 
       <label className="text-sm">
-        <div className="mb-1">Sort</div>
+        <div className="mb-1">{messages.sort}</div>
         <select
           className="border rounded-lg px-2 py-1"
           value={sort}
           onChange={(e) => update({ sort: e.target.value || undefined })}
         >
-          <option value="">None</option>
-          <option value="price-asc">Price ↑</option>
-          <option value="price-desc">Price ↓</option>
+          <option value="">{messages.none}</option>
+          <option value="price-asc">{messages.priceAsc}</option>
+          <option value="price-desc">{messages.priceDesc}</option>
         </select>
       </label>
     </div>

@@ -1,8 +1,9 @@
+// src/app/[locale]/products/page.tsx
 import { getCategories, getProducts } from "@/lib/api";
-import { Locale } from "@/lib/i18n";
 import ProductGrid from "@/components/product/ProductGrid";
 import ProductFilters from "@/components/product/ProductFilters";
 import { Product } from "@/lib/types";
+import { getMessages, Locale } from "@/lib/i18n";
 
 function applyFilters(
   all: Product[],
@@ -30,7 +31,11 @@ export default async function ProductsPage({
   const { locale } = await params;
   const sp = await searchParams;
 
-  const [all, categories] = await Promise.all([getProducts(), getCategories()]);
+  const [all, categories, messages] = await Promise.all([
+    getProducts(),
+    getCategories(),
+    getMessages(locale),
+  ]);
 
   const category = typeof sp.category === "string" ? sp.category : undefined;
   const sort = typeof sp.sort === "string" ? sp.sort : undefined;
@@ -42,14 +47,16 @@ export default async function ProductsPage({
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between gap-4">
-        <h1 className="text-2xl font-semibold">Products</h1>
+        <h1 className="text-2xl font-semibold">{messages.products.title}</h1>
       </div>
 
-      {/* Filtreler (client) */}
-      <ProductFilters categories={categories} />
+      <ProductFilters
+        categories={categories}
+        messages={messages.filters}
+        locale={locale}
+      />
 
-      {/* Grid (server) */}
-      <ProductGrid products={filtered} />
+      <ProductGrid products={filtered} emptyText={messages.products.empty} />
     </div>
   );
 }

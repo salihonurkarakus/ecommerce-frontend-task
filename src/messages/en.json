@@ -1,6 +1,17 @@
 {
   "home": {
     "title": "Home",
-    "subtitle": "Scaffold is ready. We can connect the product list next."
+    "subtitle": "Scaffold is ready. Product list is connected."
+  },
+  "products": { "title": "Products", "empty": "No products found." },
+  "filters": {
+    "category": "Category",
+    "min": "Min",
+    "max": "Max",
+    "sort": "Sort",
+    "all": "All",
+    "none": "None",
+    "priceAsc": "Price ↑",
+    "priceDesc": "Price ↓"
   }
 }
