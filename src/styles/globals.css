@@ -8,8 +8,9 @@
   outline-offset: 2px;
 }
 
-/* Koyu temada kontrastı artırmak istersen: */
-// .btn { @apply border rounded-lg px-3 py-1 hover:bg-gray-50; }
+/* Koyu temada kontrast artırmak istersen:
+.btn { @apply border rounded-lg px-3 py-1 hover:bg-gray-50; }
+*/
 
 /* Kullanıcı “animasyonları azalt” seçtiyse: */
 @media (prefers-reduced-motion: reduce) {

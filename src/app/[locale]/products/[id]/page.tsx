@@ -1,16 +1,16 @@
-// src/app/[locale]/products/[id]/page.tsx
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProduct } from "@/lib/api";
-import { Locale, locales } from "@/lib/i18n";
+import { isLocale, locales } from "@/lib/i18n";
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: Locale; id: string }>;
+  params: Promise<{ locale: string; id: string }>; // ⬅️ string
 }): Promise<Metadata> {
   const { id, locale } = await params;
+  if (!isLocale(locale)) return { title: "Product | E-Commerce" };
   try {
     const p = await getProduct(id);
     return {
@@ -42,12 +42,12 @@ export async function generateMetadata({
 export default async function ProductDetail({
   params,
 }: {
-  params: Promise<{ locale: Locale; id: string }>;
+  params: Promise<{ locale: string; id: string }>; // ⬅️ string
 }) {
   const { id, locale } = await params;
+  if (!isLocale(locale)) notFound();
   const product = await getProduct(id).catch(() => null);
   if (!product) notFound();
-
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div className="relative aspect-square border rounded-2xl p-4">
