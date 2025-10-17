@@ -6,16 +6,30 @@ import { getCategories, getProducts } from "@/lib/api";
 import ProductGrid from "@/components/product/ProductGrid";
 import ProductFilters from "@/components/product/ProductFilters";
 import { Product } from "@/lib/types";
-import { getMessages, isLocale } from "@/lib/i18n";
+import { getMessages, isLocale, locales } from "@/lib/i18n";
 
+// SEO: hreflang + canonical
 export async function generateMetadata(): Promise<Metadata> {
-  return { title: "Products | E-Commerce", description: "Browse products." };
+  const langs = Object.fromEntries(locales.map((l) => [l, `/${l}/products`]));
+  return {
+    title: "Products | E-Commerce",
+    description: "Browse products.",
+    alternates: {
+      languages: langs,          // <link rel="alternate" hreflang="tr|en" ...>
+      canonical: "/en/products", // dilediğini canonical yapabilirsin
+    },
+  };
 }
 
 // --- Helpers ---
 function applyFilters(
   all: Product[],
-  opts: { category?: string; min?: number; max?: number; sort?: "price-asc" | "price-desc" | undefined }
+  opts: {
+    category?: string;
+    min?: number;
+    max?: number;
+    sort?: "price-asc" | "price-desc" | undefined;
+  }
 ) {
   let products = [...all];
 
