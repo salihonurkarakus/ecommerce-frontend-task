@@ -1,7 +1,14 @@
 import Image from "next/image";
 import { Product } from "@/lib/types";
+import AddToCartButton from "@/components/cart/AddToCartButton";
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({
+  product,
+  locale,
+}: {
+  product: Product;
+  locale?: string;
+}) {
   return (
     <div className="rounded-2xl border p-4 flex flex-col gap-3 h-full">
       <div className="relative aspect-square">
@@ -18,15 +25,13 @@ export default function ProductCard({ product }: { product: Product }) {
         <span className="text-lg font-semibold">
           ${product.price.toFixed(2)}
         </span>
-        <form action={`#`}>
-          {/* Sepete ekleme ileride bağlanacak */}
-          <button
-            type="button"
-            className="px-3 py-1 rounded-lg border hover:bg-gray-50 text-sm"
-          >
-            Add to cart
-          </button>
-        </form>
+        <AddToCartButton
+          id={product.id}
+          title={product.title}
+          price={product.price}
+          image={product.image}
+          label={locale === "tr" ? "Sepete ekle" : "Add to cart"}
+        />
       </div>
     </div>
   );

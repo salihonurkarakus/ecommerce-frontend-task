@@ -11,7 +11,7 @@ export default function ProductLinkCard({
 }) {
   return (
     <Link href={`/${locale}/products/${product.id}`} className="block">
-      <ProductCard product={product} />
+      <ProductCard product={product} locale={locale} />
     </Link>
   );
 }
