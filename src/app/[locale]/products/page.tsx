@@ -56,7 +56,11 @@ export default async function ProductsPage({
         locale={locale}
       />
 
-      <ProductGrid products={filtered} emptyText={messages.products.empty} />
+      <ProductGrid
+        products={filtered}
+        emptyText={messages.products.empty}
+        locale={locale}
+      />
     </div>
   );
 }
