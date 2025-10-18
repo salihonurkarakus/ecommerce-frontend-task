@@ -58,10 +58,11 @@ http://localhost:3000
 
 ---
 
-## 🌐 Canlı Proje Linki
+---
+## 🌐 Canlı Demo
 
-Proje, Vercel platformu üzerinde yayınlanmıştır.  
-Aşağıdaki bağlantıdan canlı olarak erişebilirsiniz:
+Proje, **Vercel** platformu üzerinde yayınlanmıştır.  
+Aşağıdaki bağlantıya tıklayarak projeyi canlı olarak inceleyebilirsiniz 👇  
 
-🔗 **Canlı Proje:**  
-👉 [https://ecommerce-frontend-task-5i6n.vercel.app](https://ecommerce-frontend-task-5i6n.vercel.app)
+🔗 [🛍️ E-Commerce Frontend’i Canlı Görüntüle](https://ecommerce-frontend-task-5i6n.vercel.app)
+
