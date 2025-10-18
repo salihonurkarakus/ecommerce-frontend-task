@@ -62,7 +62,6 @@ http://localhost:3000
 
 Proje, **Vercel** platformu üzerinde yayınlanmıştır.  
 Aşağıdaki bağlantıya tıklayarak projeyi canlı olarak inceleyebilirsiniz 👇  
-<a href="https://ecommerce-frontend-task-5i6n.vercel.app" target="_blank" style="text-decoration:none;">
-  🛍️ <strong>E-Commerce Frontend Canlı Görüntüle</strong>
-</a>
+
+[🛒 **E-Commerce Frontend Canlı Görüntüle**](https://ecommerce-frontend-task-si6n.vercel.app)
 
