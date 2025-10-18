@@ -26,21 +26,20 @@ Uygulama, **Next.js App Router** mimarisiyle geliştirilmiş olup, **sunucu tara
 
 ---
 
+---
+
 ## 💻 Projeyi Yerelde (Local) Çalıştırmak
 
 Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyin:
 
-### 🔧 Gereksinimler
-
-Projeyi çalıştırmadan önce aşağıdaki araçların sisteminizde kurulu olduğundan emin olun:
-
+### 🧩 Gereksinimler
 - **Node.js** (v18 veya üzeri) → [https://nodejs.org](https://nodejs.org)
 - **npm** (Node ile birlikte gelir)
 - **Git** → [https://git-scm.com](https://git-scm.com)
 
 Kurulumları tamamladıktan sonra terminali (CMD / Git Bash / PowerShell) açın ve şu adımları izleyin:
 
-```bash
+bash
 # 1️⃣ Projeyi GitHub'dan klonlayın
 git clone https://github.com/salihonurkarakus/ecommerce-frontend-task.git
 
@@ -63,5 +62,7 @@ http://localhost:3000
 Proje, **Vercel** platformu üzerinde yayınlanmıştır.  
 Aşağıdaki bağlantıya tıklayarak projeyi canlı olarak inceleyebilirsiniz 👇  
 
-[🛒 **E-Commerce Frontend Canlı Görüntüle**](https://ecommerce-frontend-task-si6n.vercel.app)
+[🛍️ **E-Commerce Frontend Canlı Görüntüle**](https://ecommerce-frontend-task-5i6n.vercel.app)
+
+---
 
