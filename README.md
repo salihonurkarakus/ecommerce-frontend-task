@@ -57,11 +57,15 @@ npm run dev
 http://localhost:3000
 
 ---
-
 ---
+
 ## 🌐 Canlı Demo
 
 Proje, **Vercel** platformu üzerinde yayınlanmıştır.  
+Aşağıdaki bağlantıya tıklayarak projeyi canlı olarak inceleyebilirsiniz 👇  
+
+👉 **https://ecommerce-frontend-task-5i6n.vercel.app**
+
 Aşağıdaki bağlantıya tıklayarak projeyi canlı olarak inceleyebilirsiniz 👇  
 
 🔗 [🛍️ E-Commerce Frontend’i Canlı Görüntüle](https://ecommerce-frontend-task-5i6n.vercel.app)
