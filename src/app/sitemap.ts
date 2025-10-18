@@ -8,7 +8,7 @@ const SITE =
   "https://ecommerce-frontend-task-5i6n.vercel.app";
 
 // Bu dosya ISR ile cache'lensin (günde 1 kez yenilensin)
-export const revalidate = 60 * 60 * 24;
+export const revalidate = 86400;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Ana sayfa + ürün listesi + ürün detayları
