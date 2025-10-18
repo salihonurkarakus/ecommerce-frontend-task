@@ -11,7 +11,7 @@
     "sort": "Sort",
     "all": "All",
     "none": "None",
-    "priceAsc": "Price ↑",
-    "priceDesc": "Price ↓"
+    "priceAsc": "Price Ascending",
+    "priceDesc": "Price Descending"
   }
 }

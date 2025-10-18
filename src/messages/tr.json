@@ -11,7 +11,7 @@
     "sort": "Sırala",
     "all": "Tümü",
     "none": "Yok",
-    "priceAsc": "Fiyat ↑",
-    "priceDesc": "Fiyat ↓"
+    "priceAsc": "Fiyat Artan",
+    "priceDesc": "Fiyat Azalan"
   }
 }

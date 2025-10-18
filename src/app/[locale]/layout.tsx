@@ -23,7 +23,6 @@ export default async function LocaleLayout({
 
   return (
     <Providers messages={messages} locale={locale}>
-      {/* Skip link */}
       <a
         href="#content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-black text-white px-3 py-2 rounded"
@@ -33,7 +32,6 @@ export default async function LocaleLayout({
 
       <CartPersistGate />
 
-      {/* 👇 Sayfanın tamamını dikey flex kolon yapıyoruz */}
       <div className="min-h-screen flex flex-col">
         <header className="border-b">
           <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
@@ -43,7 +41,13 @@ export default async function LocaleLayout({
               </a>
             </nav>
             <nav className="text-sm opacity-80 flex items-center gap-4">
-              <a href={`/${locale}/products`} className="hover:underline">
+              <a
+                href={`/${locale}/products`}
+                aria-label={
+                  locale === "tr" ? "Ürünler sayfasına git" : "Go to products"
+                }
+                className="hover:underline"
+              >
                 {locale === "tr" ? "Ürünler" : "Products"}
               </a>
               <CartIcon locale={locale} />
@@ -51,7 +55,6 @@ export default async function LocaleLayout({
           </div>
         </header>
 
-        {/* 👇 main kalan yüksekliği doldurur, footerı alta iter */}
         <main id="content" className="flex-1 mx-auto max-w-6xl px-4 py-6">
           {children}
         </main>

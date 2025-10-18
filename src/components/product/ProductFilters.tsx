@@ -39,6 +39,7 @@ export default function ProductFilters({
   const min = search.get("min") || "";
   const max = search.get("max") || "";
 
+  // ⚠️ URL'yi güncelle
   function update(params: Record<string, string | undefined>) {
     const sp = new URLSearchParams(search.toString());
     Object.entries(params).forEach(([k, v]) => {
@@ -48,12 +49,33 @@ export default function ProductFilters({
     router.push(`${pathname}?${sp.toString()}`);
   }
 
+  // A11y için id'ler
+  const id = {
+    category: "filter-category",
+    min: "filter-min",
+    max: "filter-max",
+    sort: "filter-sort",
+  };
+
+  // TR/EN için açıklayıcı etiket ve placeholder'lar
+  const labels = {
+    min: locale === "tr" ? "En düşük fiyat" : "Minimum price",
+    max: locale === "tr" ? "En yüksek fiyat" : "Maximum price",
+    minPh: locale === "tr" ? "0 ₺" : "0 $",
+    maxPh: locale === "tr" ? "1000 ₺" : "1000 $",
+  };
+
   return (
     <div className="flex flex-wrap gap-3 items-end">
-      <label className="text-sm">
+      {/* Category */}
+      <label className="text-sm" htmlFor={id.category}>
         <div className="mb-1">{messages.category}</div>
         <select
-          className="border rounded-lg px-2 py-1"
+          id={id.category}
+          className="h-9 rounded-md border px-2
+                     bg-white text-gray-900
+                     dark:bg-neutral-900 dark:text-gray-100
+                     [color-scheme:light]"
           value={currentCategory}
           onChange={(e) => update({ category: e.target.value || undefined })}
         >
@@ -66,32 +88,59 @@ export default function ProductFilters({
         </select>
       </label>
 
-      <label className="text-sm">
-        <div className="mb-1">{messages.min}</div>
+      {/* Min */}
+      <label className="text-sm" htmlFor={id.min}>
+        <div className="mb-1">{labels.min}</div>
         <input
+          id={id.min}
           type="number"
-          placeholder="0"
-          className="border rounded-lg px-2 py-1 w-24"
+          inputMode="numeric"
+          min={0}
+          step={1}
+          placeholder={labels.minPh}
+          className="h-9 w-24 rounded-md border px-2
+                     bg-white text-gray-900
+                     [color-scheme:light]"
           defaultValue={min}
-          onBlur={(e) => update({ min: e.target.value || undefined })}
+          onBlur={(e) => {
+            const v = e.target.value.trim();
+            const n = v === "" ? undefined : Math.max(0, Number(v));
+            update({ min: n?.toString() });
+          }}
         />
       </label>
 
-      <label className="text-sm">
-        <div className="mb-1">{messages.max}</div>
+      {/* Max */}
+      <label className="text-sm" htmlFor={id.max}>
+        <div className="mb-1">{labels.max}</div>
         <input
+          id={id.max}
           type="number"
-          placeholder="1000"
-          className="border rounded-lg px-2 py-1 w-24"
+          inputMode="numeric"
+          min={0}
+          step={1}
+          placeholder={labels.maxPh}
+          className="h-9 w-24 rounded-md border px-2
+                     bg-white text-gray-900
+                     [color-scheme:light]"
           defaultValue={max}
-          onBlur={(e) => update({ max: e.target.value || undefined })}
+          onBlur={(e) => {
+            const v = e.target.value.trim();
+            const n = v === "" ? undefined : Math.max(0, Number(v));
+            update({ max: n?.toString() });
+          }}
         />
       </label>
 
-      <label className="text-sm">
+      {/* Sort */}
+      <label className="text-sm" htmlFor={id.sort}>
         <div className="mb-1">{messages.sort}</div>
         <select
-          className="border rounded-lg px-2 py-1"
+          id={id.sort}
+          className="h-9 rounded-md border px-2
+                     bg-white text-gray-900
+                     dark:bg-neutral-900 dark:text-gray-100
+                     [color-scheme:light]"
           value={sort}
           onChange={(e) => update({ sort: e.target.value || undefined })}
         >
