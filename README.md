@@ -39,20 +39,20 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
 
 Kurulumları tamamladıktan sonra terminali (CMD / Git Bash / PowerShell) açın ve şu adımları izleyin:
 
-bash
-# 1️⃣ Projeyi GitHub'dan klonlayın
+
+### 1️⃣ Projeyi GitHub'dan klonlayın
 git clone https://github.com/salihonurkarakus/ecommerce-frontend-task.git
 
-# 2️⃣ Proje klasörüne gidin
+### 2️⃣ Proje klasörüne gidin
 cd ecommerce-frontend-task
 
-# 3️⃣ Gerekli bağımlılıkları yükleyin
+### 3️⃣ Gerekli bağımlılıkları yükleyin
 npm install
 
-# 4️⃣ Geliştirme sunucusunu başlatın
+### 4️⃣ Geliştirme sunucusunu başlatın
 npm run dev
 
-# 5️⃣ Tarayıcıdan açın
+### 5️⃣ Tarayıcıdan açın
 http://localhost:3000
 
 ---
