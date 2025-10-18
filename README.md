@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ E-Commerce Frontend
 
-## Getting Started
+Bu proje, **Fake Store API** üzerinden ürün verilerini çekerek kullanıcıya çok dilli (Türkçe / İngilizce) bir e-ticaret arayüzü sunar.  
+Kullanıcılar ürünleri listeleyebilir, kategoriye göre filtreleyebilir, fiyata göre sıralayabilir ve sepetlerine ürün ekleyebilirler.
 
-First, run the development server:
+---
+
+## 🚀 Projenin Amacı
+
+Bu çalışma, modern frontend geliştirme araçlarını kullanarak **çok dilli, performanslı ve erişilebilir bir e-ticaret arayüzü** oluşturmayı amaçlamaktadır.  
+Uygulama, **Next.js App Router** mimarisiyle geliştirilmiş olup, **sunucu tarafı veri çekme (fetch)** ve **Incremental Static Regeneration (ISR)** gibi teknikleri kullanır.
+
+---
+
+## ⚙️ Kullanılan Teknolojiler
+
+| Teknoloji | Açıklama |
+|------------|-----------|
+| **Next.js 15 (App Router)** | React tabanlı framework, sayfa yönlendirme ve SSR/ISR işlemleri için |
+| **TypeScript** | Güvenli ve güçlü tip denetimi için |
+| **Tailwind CSS** | Hızlı ve modern arayüz tasarımı için |
+| **Redux Toolkit** | Sepet (cart) işlemleri ve global durum yönetimi için |
+| **next-intl** | Çok dilli destek (Türkçe / İngilizce) için |
+| **Fake Store API** | Ürün verilerinin alındığı ücretsiz API servisi |
+| **Vercel** | Canlıya alma (deployment) platformu |
+
+---
+
+## 💻 Projeyi Yerelde (Local) Çalıştırmak
+
+Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyin:
+
+### 🔧 Gereksinimler
+
+Projeyi çalıştırmadan önce aşağıdaki araçların sisteminizde kurulu olduğundan emin olun:
+
+- **Node.js** (v18 veya üzeri) → [https://nodejs.org](https://nodejs.org)
+- **npm** (Node ile birlikte gelir)
+- **Git** → [https://git-scm.com](https://git-scm.com)
+
+Kurulumları tamamladıktan sonra terminali (CMD / Git Bash / PowerShell) açın ve şu adımları izleyin:
 
 ```bash
+# 1️⃣ Projeyi GitHub'dan klonlayın
+git clone https://github.com/salihonurkarakus/ecommerce-frontend-task.git
+
+# 2️⃣ Proje klasörüne gidin
+cd ecommerce-frontend-task
+
+# 3️⃣ Gerekli bağımlılıkları yükleyin
+npm install
+
+# 4️⃣ Geliştirme sunucusunu başlatın
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 5️⃣ Tarayıcıdan açın
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Canlı Proje Linki
 
-## Learn More
+Proje, Vercel platformu üzerinde yayınlanmıştır.  
+Aşağıdaki bağlantıdan canlı olarak erişebilirsiniz:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🔗 **Canlı Proje:**  
+👉 [https://ecommerce-frontend-task-5i6n.vercel.app](https://ecommerce-frontend-task-5i6n.vercel.app)
